@@ -71,15 +71,19 @@ b) Draw a Venn diagram for the operation\\
     &\implies \emptyset \cup \emptyset\\
     &\implies \emptyset
 \end{align*}
-% TODO
 (e) Show that $A+B = (A \cup B)\setminus(A \cap B)$.\\
 \begin{equation*}
-    x \in A+B \implies (x \in A \cap x \notin B) \cup (x \in B \cap x \notin A)
+    A+B \implies ( A \cap B') \cup (A' \cap B)
 \end{equation*}
+\begin{align*}
+    (A \cup B)\setminus(A \cap B) &\implies ((A \cup B)\setminus A) \cup ((A \cup B)\setminus B)\\
+    &\implies (B\setminus A) \cup (A \setminus B)\\
+    &\implies (A\cap B') \cup (A' \cap B)
+\end{align*}
 \begin{equation*}
-    x \in (A \cup B)\setminus(A \cap B) \implies (x \in A \cup x \in B) \setminus (x \in B \cap x \in A)
+    A+B = (A \cup B)\setminus(A \cap B)
 \end{equation*}
-% TODO
+\newpage
 (f) For each of the following properties of $\cup$, check out whether or not it also holds for +, giving a proof or a counter example as appropriate: \\
 \renewcommand{\labelenumi}{\roman{enumi}}
 \begin{enumerate}
