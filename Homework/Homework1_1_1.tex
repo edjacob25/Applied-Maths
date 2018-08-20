@@ -80,11 +80,64 @@ b) Draw a Venn diagram for the operation\\
     x \in (A \cup B)\setminus(A \cap B) \implies (x \in A \cup x \in B) \setminus (x \in B \cap x \in A)
 \end{equation*}
 % TODO
-(f) For each of the following properties of $\cup$, check out whether or not it also holds for +, giving a proof or a counter example as appropriate: (i) commutativity, (ii) associativity, (iii) distribution of over +, (iv) distribution of + over $\cap$.\\
+(f) For each of the following properties of $\cup$, check out whether or not it also holds for +, giving a proof or a counter example as appropriate: \\
+\renewcommand{\labelenumi}{\roman{enumi}}
+\begin{enumerate}
+    \item commutativity
+    \begin{equation*}
+        A + B =  B + A
+    \end{equation*}
+    \begin{equation*}
+        x \in A + B \implies (x \in A \cap x \notin B) \cup (x \in B \cap x \notin A)
+    \end{equation*}
+    \begin{equation*}
+        x \in B + A \implies (x \in B \cap x \notin A) \cup (x \in A \cap x \notin B)
+    \end{equation*}
+    \begin{equation*}
+        (x \in A \cap x \notin B) \cup (x \in B \cap x \notin A) = (x \in B \cap x \notin A) \cup (x \in A \cap x \notin B)
+    \end{equation*}
+    \item associativity
+    \begin{equation*}
+        (A+B)+C = A+(B+C)
+    \end{equation*}
+    \begin{align*}
+        (A+B)+C &\implies (((A \cap B') \cup (A' \cap B)) \cap C') \cup (((A \cap B') \cup (A' \cap B))' \cap C)\\
+        &\implies (((A \cap B') \cup (A' \cap B)) \cap C') \cup (((A \cap B')' \cap (A' \cap B)') \cap C)\\
+        &\implies (((A \cap B') \cup (A' \cap B)) \cap C') \cup (((A' \cup B) \cap (A \cup B')) \cap C)\\
+        &\implies (A \cap B' \cap C') \cup (A' \cap B \cap C') \cup ((A' \cup B) \cap (A \cup B') \cap C)\\
+        &\implies (A \cap B' \cap C') \cup (A' \cap B \cap C') \cup ((A' \cup B) \cap ((A \cap C ) \cup (B' \cap C)))\\
+        &\implies (A \cap B' \cap C') \cup (A' \cap B \cap C') \cup (((A' \cup B) \cap (A \cap C )) \cup ((A' \cup B) \cap (B' \cap C)))\\
+        &\implies (A \cap B' \cap C') \cup (A' \cap B \cap C') \cup (B \cap A \cap C) \cup (A' \cap B' \cap C)\\
+        &\implies (A \cap B' \cap C') \cup (A' \cap B \cap C') \cup (A' \cap B' \cap C) \cup (A \cap B \cap C)
+    \end{align*}
+    \begin{align*}
+        (B+C)+A &\implies (((B \cap C') \cup (B' \cap C)) \cap A') \cup (((B \cap C') \cup (B' \cap C))' \cap A)\\
+        &\implies (((B \cap C') \cup (B' \cap C)) \cap A') \cup (((B \cap C')' \cap (B' \cap C)') \cap A)\\
+        &\implies (((B \cap C') \cup (B' \cap C)) \cap A') \cup (((B' \cup C) \cap (B \cup C')) \cap A)\\
+        &\implies (B \cap C' \cap A') \cup (B' \cap C \cap A') \cup ((B' \cup C) \cap (B \cup C') \cap A)\\
+        &\implies (B \cap C' \cap A') \cup (B' \cap C \cap A') \cup ((B' \cup C) \cap ((B \cap A ) \cup (C' \cap A)))\\
+        &\implies (B \cap C' \cap A') \cup (B' \cap C \cap A') \cup (((B' \cup C) \cap (B \cap A )) \cup ((B' \cup C) \cap (C' \cap A)))\\
+        &\implies (B \cap C' \cap A') \cup (B' \cap C \cap A') \cup (C \cap B \cap A) \cup (B' \cap C' \cap A)\\
+        &\implies (B \cap C' \cap A') \cup (B' \cap C \cap A') \cup (B' \cap C' \cap A) \cup (B \cap C \cap A)\\
+        &\implies (A \cap B' \cap C') \cup (A' \cap B \cap C') \cup (A' \cap B' \cap C) \cup (A \cap B \cap C)
+    \end{align*}
+    \begin{align*}
+        x \in (A + B) + C &\implies(x \in A \cap x \notin B \cap x \notin C) \cup (x \notin A \cap x \in B \cap x \notin C) \cup\\
+        &\qquad\quad(x \notin A \cap x \notin B \cap x \in C) \cup (x \in A \cap x \in B \cap x \in C)
+    \end{align*}
+    \begin{align*}
+        x \in A + (B + C) &\implies (x \in A \cap x \notin B \cap x \notin C) \cup (x \notin A \cap x \in B \cap x \notin C) \cup\\
+        &\qquad\quad(x \notin A \cap x \notin B \cap x \in C) \cup (x \in A \cap x \in B \cap x \in C)
+    \end{align*}
+    \item distribution of $\cap$ over +
+    \item distribution of + over $\cap$
+\end{enumerate}
 (g) Express $-(A+B)$ using union, intersection and complement.\\
 \begin{align*}
     -(A+B) &\implies -((A|B) \cup (B|A))\\
-           &\implies (A \cap B') \cup (B \cap A')'\\
+           &\implies ((A \cap B') \cup (B \cap A'))'\\
+           &\implies (A \cap B')' \cap (B \cap A')'\\
+           &\implies (A' \cup B) \cap (B' \cup A)\\
            &\implies (A \cap B) \cup (A' \cap B')\\
 \end{align*}
 (h) We have seen that each of intersection, union and difference corresponds to a truth-functional logical connective. To what connective mentioned in this lecture does symmetric difference correspond? Draw its truth table.
