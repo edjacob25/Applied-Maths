@@ -17,6 +17,9 @@ a) Show that for any x, $x \in A + B$ iff x is an element of exactly one of A, B
 \begin{equation*}
     x \in A + B \implies (x \in A \cap x \notin B) \cup (x \in B \cap x \notin A)
 \end{equation*}
+\begin{equation*}
+    x \in A \cap B \implies x \in A \cap x \in B \implies Not\ in\ A + B
+\end{equation*}
 b) Draw a Venn diagram for the operation\\
 \begin{center}
     \begin{tikzpicture}[fill=gray]
@@ -42,13 +45,42 @@ b) Draw a Venn diagram for the operation\\
 \begin{equation*}
     x \in A+B \implies (x \in A \cap x \notin B) \cup (x \in B \cap x \notin A)
 \end{equation*}
+\begin{equation*}
+    x \in A \cup B \implies x \in A \cup x \in B
+\end{equation*}
 \begin{align*}
-    x \in A \cup B &\implies x \in A \cup x \in B\\
-                   &\implies A = B
+    x \in A \cap x \notin B &\implies x \in A\\
+                   &\implies x \in A \cup B
+\end{align*}
+\begin{align*}
+    x \in B \cap x \notin A &\implies x \in B\\
+                   &\implies x \in A \cup B
 \end{align*}
 (d) Show that $A+B$ is disjoint from $A \cap B$.\\
-(e) Show that $A+B = (A \cup B)|(A \cap B)$.\\
-(f) For each of the following properties of $\cup$ , check out whether or not it also holds for +, giving a proof or a counter example as appropriate: (i) commutativity, (ii) associativity, (iii) distribution of over +, (iv) distribution of + over $\cap$.\\
+\begin{equation*}
+    Show\ that\ (A \cap B) \cap (A+B) = \emptyset
+\end{equation*}
+\begin{equation*}
+    x \in A+B \implies (x \in A \cap x \notin B) \cup (x \in B \cap x \notin A)
+\end{equation*}
+\begin{align*}
+    x \in (A \cap B) \cap (A+B) &\implies (x \in A \cap x \in B) \cap ((x \in A \cap x \notin B) \cup (x \in B \cap x \notin A))\\
+    &\implies ((x \in A \cap x \notin B) \cap (x \in A \cap x \in B)) \cup ((x \in B \cap x \notin A) \cap (x \in A \cap x \in B))\\
+    &\implies (x \in A \cap x \notin B \cap x \in B) \cup (x \in B \cap x \notin A \cap x \in A)\\
+    &\implies (x \in A \cap \emptyset) \cup (x in B \cap \emptyset)\\
+    &\implies \emptyset \cup \emptyset\\
+    &\implies \emptyset
+\end{align*}
+% TODO
+(e) Show that $A+B = (A \cup B)\setminus(A \cap B)$.\\
+\begin{equation*}
+    x \in A+B \implies (x \in A \cap x \notin B) \cup (x \in B \cap x \notin A)
+\end{equation*}
+\begin{equation*}
+    x \in (A \cup B)\setminus(A \cap B) \implies (x \in A \cup x \in B) \setminus (x \in B \cap x \in A)
+\end{equation*}
+% TODO
+(f) For each of the following properties of $\cup$, check out whether or not it also holds for +, giving a proof or a counter example as appropriate: (i) commutativity, (ii) associativity, (iii) distribution of over +, (iv) distribution of + over $\cap$.\\
 (g) Express $-(A+B)$ using union, intersection and complement.\\
 \begin{align*}
     -(A+B) &\implies -((A|B) \cup (B|A))\\
