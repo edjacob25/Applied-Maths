@@ -130,7 +130,39 @@ b) Draw a Venn diagram for the operation\\
         &\qquad\quad(x \notin A \cap x \notin B \cap x \in C) \cup (x \in A \cap x \in B \cap x \in C)
     \end{align*}
     \item distribution of $\cap$ over +
+    \begin{equation*}
+        A \cap (B + C) = (A \cap B) + (A \cap C)
+    \end{equation*}
+    \begin{align*}
+        (A \cap B) + (A \cap C) &\implies ((A \cap B) \cap (A \cap C)') \cup ((A \cap B)' \cap (A \cap C))\\
+        &\implies ((A \cap B) \cap (A' \cup C')) \cup ((A' \cup B') \cap (A \cap C))\\
+        &\implies ((A \cap B) \cap A') \cup ((A \cap B) \cap C') \cup (A'\cap (A \cap C)) \cup (B' \cap (A \cap C))\\
+        &\implies ((\emptyset) \cup ((A \cap B) \cap C') \cup (\emptyset) \cup (B' \cap (A \cap C))\\
+        &\implies (A \cap B \cap C') \cup (A \cap B' \cap C)\\
+        &\implies A \cap ((B \cap C') \cup (B' \cap C))\\
+        &\implies  A \cap (B + C)
+    \end{align*}
     \item distribution of + over $\cap$
+    \begin{equation*}
+        A + (B \cap C) \neq (A + B) \cap (A + C)
+    \end{equation*}
+    \begin{align*}
+        A + (B \cap C) &\implies (A \cap (B \cap C)') \cup (A' \cap (B \cap C))\\
+        &\implies (A\cap (B' \cup C')) \cup (A' \cap B \cap C)\\
+        &\implies (A\cap B') \cup (A\cap C') \cup (A' \cap B \cap C)
+    \end{align*}
+    \begin{align*}
+        (A + B) \cap (A + C) &\implies ((A \cap B')\cup(A'\cap B)) \cap ((A\cap C')\cup(A'\cap C))\\
+        &\implies ((A \cap B')\cup A')\cap ((A \cap B')\cup B) \cap ((A\cap C')\cup A')\cap ((A\cap C')\cup C)\\
+        &\implies (A \cup A') \cap (B' \cup A')\cap (A\cup B) \cap (B' \cup B) \cap (A \cup A') \cap (C' \cup A')\cap (A\cup C) \cap (C' \cup C)\\
+        &\implies (U) \cap (B' \cup A')\cap (A\cup B) \cap (U) \cap (U) \cap (C' \cup A')\cap (A\cup C) \cap (U)\\
+        &\implies (A\cup B) \cap (A\cup C) \cap (B' \cup A') \cap (C' \cup A')\\
+        &\implies (A \cup (B \cap C)) \cap (A' \cup (B' \cap C'))\\
+    \end{align*}
+    \begin{align*}
+        x \in A \cap B \cap C' &\implies x \in A+(B \cap C)\\
+        &\implies x \notin (A + B) \cap (A + C)
+    \end{align*}
 \end{enumerate}
 (g) Express $-(A+B)$ using union, intersection and complement.\\
 \begin{align*}
@@ -138,6 +170,9 @@ b) Draw a Venn diagram for the operation\\
            &\implies ((A \cap B') \cup (B \cap A'))'\\
            &\implies (A \cap B')' \cap (B \cap A')'\\
            &\implies (A' \cup B) \cap (B' \cup A)\\
+           &\implies ((A' \cup B) \cap B') \cup ((A' \cup B) \cap A)\\
+           &\implies (A' \cap B') \cup (B \cap B') \cup (A' \cap A) \cup (B \cap A)\\
+           &\implies (A' \cap B') \cup (\emptyset) \cup (\emptyset) \cup (B \cap A)\\
            &\implies (A \cap B) \cup (A' \cap B')\\
 \end{align*}
 (h) We have seen that each of intersection, union and difference corresponds to a truth-functional logical connective. To what connective mentioned in this lecture does symmetric difference correspond? Draw its truth table.
