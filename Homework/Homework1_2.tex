@@ -17,21 +17,33 @@
 \begin{equation*}
     x = 1
 \end{equation*}
-(b) Show that $A \times (B \cup C) = (A \times B) \cup (A \times C)$ 
+(b) Show that $A \times (B \cup C) = (A \times B) \cup (A \times C)$
 
 \section*{1.2.2}
-(a) Consider the relations $R={(1,7), (3,3), (13,11)}$ and $S={(1,1), (1,7), (3,11), (13,12), (15,1)}$ over the positive integers. Identify $dom(R\cap S)$, $range(R\cap S)$, $dom(R\cup S)$, $range(R\cup S)$
+(a) Consider the relations $R=\{ (1,7), (3,3), (13,11) \}$ and $S=\{ (1,1), (1,7), (3,11), (13,12), (15,1) \}$ over the positive integers. Identify $dom(R\cap S)$, $range(R\cap S)$, $dom(R\cup S)$, $range(R\cup S)$
+\begin{equation*}
+    dom(R\cap S) = \{ 1\}
+\end{equation*}
+\begin{equation*}
+    range(R\cap S) = \{ 7\}
+\end{equation*}
+\begin{equation*}
+    dom(R\cup S) = \{ 1, 3, 13, 15 \}
+\end{equation*}
+\begin{equation*}
+    range(R\cup S) = \{ 7, 3, 11, 1, 12 \}
+\end{equation*}
 (b) In the same example, identify $join(R,S)$, $join(S,R)$, $S \circ R$, $R\circ S$, $R \circ R$, $S \circ S$.
 (c) In the same example, identify $R(X)$ and $S(X)$ for $X={1,3,11}$ and $X=\emptyset$.
 (d) Explain how to carry out composition by means of join and projection.
 \section*{1.2.3}
 (a) Show that R is reflexive over $A$ iff $I_A \subseteq R$. Here $I_A$ is the identity relation over $A$, defined in an exercise in Sect. 2.1.3.
-(b) Show that the converse of a relation $R$ that is reflexive over a set $A$ is also reflexive over $A$. 
+(b) Show that the converse of a relation $R$ that is reflexive over a set $A$ is also reflexive over $A$.
 (c) Show that R is transitive iff $R \circ R \subseteq R$.
 \section*{1.2.4}
 (a) Show that the following three conditions are equivalent: (i) $R$ is symmetric, (ii) $R \subseteq R^-1$ , (iii) $R = R^-1$.
 (b) Show that if $R$ is reflexive over $A$ and also transitive, then the relation $S$ defined by $(a,b) \in S$ iff both $(a,b) \in R$ and $(b,a) \in R$ is an equivalence relation.
-(c) Enumerate all the partitions of $A={1,2,3}$ and draw a Hasse diagram for them under fineness.
+(c) Enumerate all the partitions of $A=\{ 1, 2, 3 \}$ and draw a Hasse diagram for them under fineness.
 \section*{1.2.5}
 Let $R$ be any transitive relation over a set $A$. Define $S$ over $A$ by putting $(a,b) \in S$ iff either $a = b$ or both $(a,b) \in R$ and $\neg (b,a) \in R$. Show that $S$ partially orders $A$.
 \end{document}
