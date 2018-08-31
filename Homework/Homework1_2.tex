@@ -13,12 +13,22 @@
 
 \begin{document}
 \section*{1.2.1}
-(a) Show that $A \times  (B \cap C) = (A \times B) \cap (A \times C)$
-\begin{equation*}
-    x = 1
-\end{equation*}
+(a) Show that $A \times (B \cap C) = (A \times B) \cap (A \times C)$
+\begin{align*}
+    (x, y) \in A \times (B \cap C) &\implies x \in A \wedge y \in (B \cap C)\\
+    &\implies x \in A \wedge y \in B \wedge y \in C\\
+    (x, y) \in (A \times B) \cap (A \times C)&\implies (x, y) \in (A \times B) \wedge (x, y) \in (A \times C)\\
+    &\implies x \in A \wedge y \in B \wedge x \in A \wedge y \in C\\
+    &\implies x \in A \wedge y \in B \wedge y \in C
+\end{align*}
 (b) Show that $A \times (B \cup C) = (A \times B) \cup (A \times C)$
-
+\begin{align*}
+    (x, y) \in A \times (B \cup C) &\implies x \in A \wedge y \in (B \cup C)\\
+    &\implies x \in A \wedge (y \in B \vee y \in C)\\
+    (x, y) \in (A \times B) \cup (A \times C)&\implies (x, y) \in (A \times B) \vee (x, y) \in (A \times C)\\
+    &\implies (x \in A \wedge y \in B) \vee (x \in A \wedge y \in C)\\
+    &\implies x \in A \wedge (y \in B \wedge y \in C)
+\end{align*}
 \section*{1.2.2}
 (a) Consider the relations $R=\{ (1,7), (3,3), (13,11) \}$ and $S=\{ (1,1), (1,7), (3,11), (13,12), (15,1) \}$ over the positive integers. Identify $dom(R\cap S)$, $range(R\cap S)$, $dom(R\cup S)$, $range(R\cup S)$
 \begin{equation*}
@@ -34,8 +44,32 @@
     range(R\cup S) = \{ 7, 3, 11, 1, 12 \}
 \end{equation*}
 (b) In the same example, identify $join(R,S)$, $join(S,R)$, $S \circ R$, $R\circ S$, $R \circ R$, $S \circ S$.
-(c) In the same example, identify $R(X)$ and $S(X)$ for $X={1,3,11}$ and $X=\emptyset$.
-(d) Explain how to carry out composition by means of join and projection.
+\begin{equation*}
+    join(R,S) = \{ (3,3,11) \}
+\end{equation*}
+\begin{equation*}
+    join(S,R) = \{ (1, 1, 7), (15, 1, 1) \}
+\end{equation*}
+\begin{equation*}
+    S \circ R = \{ (1,7), (15, 1) \}
+\end{equation*}
+\begin{equation*}
+    R \circ S = \{ (3, 11) \}
+\end{equation*}
+\begin{equation*}
+    R \circ R = \{ (3, 3) \}
+\end{equation*}
+\begin{equation*}
+    S \circ S = \{ (1, 1), (1, 7), (15, 1), (15, 7) \}
+\end{equation*}
+(c) In the same example, identify $R(X)$ and $S(X)$ for $X=\{ 1, 3, 11 \}$ and $X=\emptyset$.
+\begin{align*}
+    X&=\{ 1, 3, 11 \} & X&=\emptyset\\
+    R(X)&=\{(1,7), (3,3)\} & R(X) &=\emptyset\\
+    S(X)&=\{ (1,1), (1,7), (3,11)\} & S(X) &=\emptyset\\
+\end{align*}
+(d) Explain how to carry out composition by means of join and projection.\\
+Composition is the result of first applying the $join$ and thenn ussing the $projection$ to eliminate the common item
 \section*{1.2.3}
 (a) Show that R is reflexive over $A$ iff $I_A \subseteq R$. Here $I_A$ is the identity relation over $A$, defined in an exercise in Sect. 2.1.3.
 (b) Show that the converse of a relation $R$ that is reflexive over a set $A$ is also reflexive over $A$.
