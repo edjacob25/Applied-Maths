@@ -29,6 +29,7 @@
     &\implies (x \in A \wedge y \in B) \vee (x \in A \wedge y \in C)\\
     &\implies x \in A \wedge (y \in B \wedge y \in C)
 \end{align*}
+
 \section*{1.2.2}
 (a) Consider the relations $R=\{ (1,7), (3,3), (13,11) \}$ and $S=\{ (1,1), (1,7), (3,11), (13,12), (15,1) \}$ over the positive integers. Identify $dom(R\cap S)$, $range(R\cap S)$, $dom(R\cup S)$, $range(R\cup S)$
 \begin{equation*}
@@ -70,6 +71,7 @@
 \end{align*}
 (d) Explain how to carry out composition by means of join and projection.\\
 Composition is the result of first applying the $join$ and thenn ussing the $projection$ to eliminate the common item
+
 \section*{1.2.3}
 (a) Show that R is reflexive over $A$ iff $I_A \subseteq R$. Here $I_A$ is the identity relation over $A$, defined in an exercise in Sect. 2.1.3.
 \begin{align*}
@@ -95,6 +97,7 @@ Composition is the result of first applying the $join$ and thenn ussing the $pro
      R \circ R \subseteq R &\implies (a, c) \in R\\
      &\implies R(R(a,b), c) = R(a, R(b, c))
  \end{align*}
+
 \section*{1.2.4}
 (a) Show that the following three conditions are equivalent: (i) $R$ is symmetric, (ii) $R \subseteq R^{-1}$ , (iii) $R = R^{-1}$.
 \begin{align*}
@@ -102,7 +105,10 @@ Composition is the result of first applying the $join$ and thenn ussing the $pro
 \end{align*}
 (b) Show that if $R$ is reflexive over $A$ and also transitive, then the relation $S$ defined by $(a,b) \in S$ iff both $(a,b) \in R$ and $(b,a) \in R$ is an equivalence relation.
 \begin{align*}
-    R\ is\ reflexive
+    reflexive &= (a, a) \in R \forall a \in A \\
+    S &= \{(a, b):(a,b) \in R \wedge (b,a) \in R \}\\
+    (a,b) \in R \wedge (b,a) \in R &\implies a = b\\
+    &\implies S\ is\ equivalent
 \end{align*}
 (c) Enumerate all the partitions of $A=\{ 1, 2, 3 \}$ and draw a Hasse diagram for them under fineness.
 \begin{align*}
@@ -112,6 +118,27 @@ Composition is the result of first applying the $join$ and thenn ussing the $pro
     &\{\{2, 3\},\{1\}\},\\
     &\{\{1, 2, 3\}\}\}
 \end{align*}
+\begin{center}
+    \begin{tikzpicture}[xscale=1.3, yscale=1]
+        \node (bottom) at (0,0) {$\{\{1\}, \{2\}, \{3\}\}$};
+        \node (middle) at (0, 1) {$\{\{1, 3\},\{2\}\}$};
+        \node (middleleft) at (-2,1) {$\{\{1, 2\},\{3\}\}$};
+        \node (middleright) at (2,1) {$\{\{1\},\{2, 3\}\}$};
+        \node [above of=middle] (top)  {$\{1, 2, 3\}$};
+        \draw (bottom) -- (middleleft) -- (top) -- (middle) -- (bottom) -- (middleright) -- (top);
+    \end{tikzpicture}
+\end{center}
+
 \section*{1.2.5}
 Let $R$ be any transitive relation over a set $A$. Define $S$ over $A$ by putting $(a,b) \in S$ iff either $a = b$ or both $(a,b) \in R$ and $\neg (b,a) \in R$. Show that $S$ partially orders $A$.
+\begin{align*}
+    Partial\ order &= reflexive,\ transitive\ and\ antisymmetric\\
+    reflexive &= (a, a) \in R \forall a \in A \\
+    %transitive &= \\
+    antisymmetric &= (a,b) \in R \wedge (b,a) \notin R\\
+    S &= \{(a, b): a = b \vee [(a,b) \in R \wedge (b,a) \notin R ]\}\\
+    \{(a, b) : a = b\} &\implies S\ is\ reflexive\\
+    \{(a, b) :(a,b) \in R \wedge (b,a) \notin R\} &\implies S\ is\ transitive\\
+    &\implies S\ is\ antisymmetric
+\end{align*}
 \end{document}
