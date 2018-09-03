@@ -4,6 +4,7 @@
     \usepackage[parfill]{parskip}
     \usepackage[utf8]{inputenc}
     \usepackage{amsmath}
+    \usepackage{amssymb}
     \usepackage{tikz}
     \usepackage{fancyhdr}
 
@@ -91,17 +92,24 @@ Composition is the result of first applying the $join$ and thenn ussing the $pro
     &\implies R^{-1}\ is\ reflexive\ over\ A
 \end{align*}
 (c) Show that R is transitive iff $R \circ R \subseteq R$.
- \begin{align*}
-     R\ is\ transitive &\iff R \circ R \subseteq R\\
-     R \circ R &= \{(a, c): aRb \wedge bRc\}\\
-     R \circ R \subseteq R &\implies (a, c) \in R\\
-     &\implies R(R(a,b), c) = R(a, R(b, c))
- \end{align*}
+\begin{align*}
+    R\ is\ transitive &\iff R \circ R \subseteq R\\
+    R \circ R &= \{(a, c): aRb \wedge bRc\}\\
+    R \circ R \subseteq R &\implies (a, c) \in R\\
+    &\implies R(R(a,b), c) = R(a, R(b, c))
+\end{align*}
+\newpage
 
 \section*{1.2.4}
 (a) Show that the following three conditions are equivalent: (i) $R$ is symmetric, (ii) $R \subseteq R^{-1}$ , (iii) $R = R^{-1}$.
 \begin{align*}
-    R\ is\ symetric \equiv R \subseteq R^{-1} \equiv R = R^{-1}\\
+    R\ is\ symetric \equiv R &\subseteq R^{-1} \equiv R = R^{-1}\\
+    R\ is\ symetric &= \forall(a,b) \in R \exists (b,a) \in R\\
+    R \subseteq R^{-1} &\implies \forall (a,b) \in R, \exists (a, b) \in R^{-1}\\
+    &\implies (a,b) = (b, a)\\
+    &\implies R = R^{-1}\\
+    R = R^{-1}&\implies \forall (a,b) \in R, \exists (a, b) \in R^{-1}= \forall(a,b) \in R \exists (b,a) \in R\\
+    &\therefore R\ is\ symetric \equiv R \subseteq R^{-1} \equiv R = R^{-1}
 \end{align*}
 (b) Show that if $R$ is reflexive over $A$ and also transitive, then the relation $S$ defined by $(a,b) \in S$ iff both $(a,b) \in R$ and $(b,a) \in R$ is an equivalence relation.
 \begin{align*}
