@@ -1,0 +1,49 @@
+\documentclass{article}
+    % General document formatting
+    \usepackage[margin=0.7in]{geometry}
+    \usepackage[parfill]{parskip}
+    \usepackage[utf8]{inputenc}
+    \usepackage{amsmath}
+    \usepackage{amssymb}
+    \usepackage{tikz}
+    \usepackage{fancyhdr}
+
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{Edgar Jacob Rivera Rios - A01184125}
+
+\renewcommand{\labelenumi}{\alph{enumi})}
+\renewcommand{\labelenumii}{\roman{enumii})}
+
+\begin{document}
+\section*{1.4.1 Proof by simple induction}
+\begin{enumerate}
+    \item Use simple induction to show that for every positive integer $n$, $5^n - 1$ is divisible by 4
+    \item Use simple induction to show that for every positive integer $n$, $n^3- n$ is divisible by 3. (Hint: In the induction step, you will need to make use of the arithmetic fact that $(k+1)^3 = k^3 + 3k^2 + 3k +1$)
+    \item Show by simple induction that for every natural number $n$, $\sum_{i=0}^{n} 2^{i} = 2^{n+1} - 1$
+\end{enumerate}
+\section*{1.4.2: Definition by simple recursion}
+\begin{enumerate}
+    \item  Let $f: N \rightarrow N$ be the function defined by putting $f (0) = 0$ and $f(n+1) = n$ for all $n \in N$.
+    \begin{enumerate}
+        \item Evaluate this function bottom-up for all arguments 0–5.
+        \item Explain what f does by expressing it in explicit terms (i.e. without a recursion).
+    \end{enumerate}
+    \item Let $f : N^{+} \rightarrow N$ be the function that takes each positive integer $n$ to the greatest natural number $p$ with $2^{p} \leq n$. Define this function by a simple recursion. (Hint: You will need to divide the recursion step into two cases.)
+    \item Let $g: NXN \rightarrow N$ be defined by putting $g(m,0)= m$ for all $m \in N$ and $g(m,n+1)=f (g(m,n))$ where $f$ is the function defined in part (a) of this exercise.
+    \begin{enumerate}
+        \item Evaluate $g(3,4)$ top-down.
+        \item Explain what $g$ does by expressing it in explicit terms (i.e. without a recursion).
+    \end{enumerate}
+\end{enumerate}
+
+\section*{1.4.3: Proof by cumulative induction}
+\begin{enumerate}
+    \item Use cumulative induction to show that any postage cost of four or more pence can be covered by two-pence and five-pence stamps.
+    \item Use cumulative induction to show that for every natural number $n$, $F(n) \leq 2^{n}-1$, where $F$ is the Fibonacci function.
+    \item Calculate F(5) top-down, and then again bottom-up, where again $F$ is the Fibonacci function
+    \item Express each of the numbers 14, 15 and 16 as a sum of $3s$ and/or $8s$. Using this fact in your basis, show by cumulative induction that every positive integer $n \leq 14$ may be expressed as a sum of $3s$ and/or $8s$.
+    \item Show by induction that for every natural number $n$, $A(1,n) = n+2$, where $A$ is the Ackermann function.
+\end{enumerate}
+
+\end{document}
