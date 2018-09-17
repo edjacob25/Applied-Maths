@@ -123,11 +123,102 @@
 
 \section*{1.4.3: Proof by cumulative induction}
 \begin{enumerate}
-    \item Use cumulative induction to show that any postage cost of four or more pence can be covered by two-pence and five-pence stamps.
-    \item Use cumulative induction to show that for every natural number $n$, $F(n) \leq 2^{n}-1$, where $F$ is the Fibonacci function.
-    \item Calculate F(5) top-down, and then again bottom-up, where again $F$ is the Fibonacci function
-    \item Express each of the numbers 14, 15 and 16 as a sum of $3s$ and/or $8s$. Using this fact in your basis, show by cumulative induction that every positive integer $n \leq 14$ may be expressed as a sum of $3s$ and/or $8s$.
+    \item Use cumulative induction to show that any postage cost of four or more pence can be covered by two-pence and five-pence stamps.\\
+    $2x + 5y = n$, when $n \geq 4$\\
+    Base case:
+    \begin{align*}
+        n &= 4 &4 &= 2(2) + 5(0)
+    \end{align*}
+    Induction step:
+    \begin{align*}
+        hypothesis &\rightarrow \forall j < k,\ j = 2x +5y\\
+        goal &\rightarrow k = 2x + 3y\\
+        case (1) &\rightarrow k\ is\ multiple\ of\ two \implies y = 0\ and\ x \in N\\
+        case (2) &\rightarrow k\ is\ multiple\ of\ five \implies x = 0\ and\ y \in N\\
+        case (3) &\rightarrow k\ is\ not\ multiple\ of\ any \implies y \in N\ and\ x \in N\\
+    \end{align*}
+    \item Use cumulative induction to show that for every natural number $n$, $F(n) \leq 2^{n}-1$, where $F$ is the Fibonacci function.\\
+    $F(n) \leq 2^{n} -1$, \\
+    Base case:
+    \begin{align*}
+        n &\leq 1 &1 &\leq 2^{1} - 1
+    \end{align*}
+    Induction step:
+    \begin{align*}
+        hypothesis &\rightarrow \forall j < k,\ F(j) \leq 2^{j} - 1\\
+        goal &\rightarrow F(k) \leq 2^{k} -1\\
+        case (1) &\rightarrow F(k)\ is\ greater\ than\ 2^{k} -1 \implies 2^{k+1} -1 < F(j +1)\\
+        &Impossible\ given\ that\ F\ grows\ at\ F(k)\ and\ 2^{k} -1\ grows\ at\ double\ rate\\
+        case (2) &\rightarrow F(k)\ is\ less\ or\ equal\ than\ 2^{k} -1e \implies This\ must\ be\ true\ then
+    \end{align*}
+    \item Calculate F(5) top-down, and then again bottom-up, where again $F$ is the Fibonacci function\\
+    Top-down:
+    \begin{align*}
+        F(5) &= F(4) + F(3) \\
+        F(5) &= (F(3) + F(2)) + (F(2) + F(1)) \\
+        F(5) &= ((F(2) + F(1)) + (F(1) + F(0))) + ((F(1) + F(0)) + 1)\\
+        F(5) &= (((F(1) + F(0)) + 1) + (1 + 0)) + ((1 + 0) + 1)\\
+        F(5) &= (((1+ 0) + 1) + (1 + 0)) + ((1 + 0) + 1)\\
+        F(5) &= ((1 + 1) + (1)) + (1 + 1)\\
+        F(5) &= (2 + 1) + (2)\\
+        F(5) &= 3 + 2\\
+        F(5) &= 5
+    \end{align*}
+    Bottom-up
+    \begin{align*}
+        F(0) &= 0 \\
+        F(1) &= 1 \\
+        F(2) &= F(1) + F(0) = 1 + 0 = 1\\
+        F(3) &= F(2) + F(1) = 1 + 1 = 2\\
+        F(4) &= F(3) + F(2) = 2 + 1 = 3\\
+        F(5) &= F(4) + F(3) = 3 + 2 = 5
+    \end{align*}
+    \item Express each of the numbers 14, 15 and 16 as a sum of $3s$ and/or $8s$. Using this fact in your basis, show by cumulative induction that every positive integer $n \leq 14$ may be expressed as a sum of $3s$ and/or $8s$.\\
+    $n = 3x + 8y$, when $n > 14$\\
+    Base case:
+    \begin{align*}
+        n &= 14 & 14 = 3(2) + 8(1)\\
+        n &= 15 & 15 = 3(5) + 8(0)\\
+        n &= 16 & 16 = 3(0) + 8(2)\\
+    \end{align*}
+    Induction step:
+    \begin{align*}
+        hypothesis &\rightarrow \forall j < k,\ j = 3x + 8y\\
+        goal &\rightarrow k = 3x + 8y\\
+        case (1) &\rightarrow k\ is\ multiple\ of\ three \implies y = 0\ and\ x \in N\\
+        case (2) &\rightarrow k\ is\ multiple\ of\ eigth \implies x = 0\ and\ y \in N\\
+        case (3) &\rightarrow k\ is\ not\ multiple\ of\ any \implies y \in N\ and\ x \in N\\
+    \end{align*}
     \item Show by induction that for every natural number $n$, $A(1,n) = n+2$, where $A$ is the Ackermann function.
+    \[   
+    A(m,n) = 
+    \begin{cases}
+        n + 1 &\quad if\ m=0\\
+        A(m-1, 1) &\quad if\ m >0\ and\ n=0\\
+        A(m-1, A(m, n - 1)) &\quad if\ m >0\ and\ n >0\\
+    \end{cases}
+    \]
+    Base case:
+    \begin{align*}
+        n &= 0 & A(1, 0) &= A(0, 1)\\
+        & & &=2\\
+        & & &=(0) +2\\
+        n &= 1 & A(1, 1) &= A(0, A(1, 0))\\
+        & & &=A(0, 2)\\
+        & & &=3\\
+        & & &=(1) +2\\
+    \end{align*}
+    Induction step:
+    \begin{align*}
+        hypothesis &\rightarrow \forall j < k,\ A(1,j) = j + 2\\
+        goal &\rightarrow A(1,k) = k + 2\\
+        A(1, k + 1) &= (k + 1) + 2\\
+        &= A(0, A(1, k))\\
+        &= A(1, k) +1\\
+        &= (k + 2) +1\\
+        A(1, k + 1) &= k + 3\\
+        &\therefore A(1,k) = k + 2
+    \end{align*}
 \end{enumerate}
 
 \end{document}
