@@ -5,6 +5,7 @@
     \usepackage[utf8]{inputenc}
     \usepackage{amsmath}
     \usepackage{amssymb}
+    \usepackage{amsthm}
     \usepackage{tikz}
     \usepackage{fancyhdr}
 
@@ -18,22 +19,105 @@
 \begin{document}
 \section*{1.4.1 Proof by simple induction}
 \begin{enumerate}
-    \item Use simple induction to show that for every positive integer $n$, $5^n - 1$ is divisible by 4
-    \item Use simple induction to show that for every positive integer $n$, $n^3- n$ is divisible by 3. (Hint: In the induction step, you will need to make use of the arithmetic fact that $(k+1)^3 = k^3 + 3k^2 + 3k +1$)
-    \item Show by simple induction that for every natural number $n$, $\sum_{i=0}^{n} 2^{i} = 2^{n+1} - 1$
+    \item Use simple induction to show that for every positive integer $n$, $5^n - 1$ is divisible by 4\\
+    $5^{n}-1$ is divisible by 4\\
+    Base case:
+    \begin{align*}
+        5^{1}-1 &= 4j\\
+        &= 4 = 4j\\
+        5^{k}-1 &= 4j\\
+        5^{k}&= 4j+1
+    \end{align*}
+    Induction step:
+    \begin{align*}
+        &= 5^{k+ 1}-1\\
+        &= 5^{k} \cdot 5 - 1\\
+        &=(4j+1) \cdot 5 - 1\\
+        &=(20j + 5) -1\\
+        &=20j + 4\\
+        &=4\cdot(5j + 1)\\
+        &\implies true\ for\ n = k + 1
+    \end{align*}
+    \item Use simple induction to show that for every positive integer $n$, $n^3- n$ is divisible by 3. (Hint: In the induction step, you will need to make use of the arithmetic fact that $(k+1)^3 = k^3 + 3k^2 + 3k +1$)\\
+    $n^3- n$ is divisible by 3\\
+    Base case:
+    \begin{align*}
+        1^3- 1 &= 3j\\
+        &= 0 = 3j\\
+        k^{3}-k &= 3j\\
+        k^{3}&= 3j+k
+    \end{align*}
+    Induction step:
+    \begin{align*}
+        &= (k + 1)^{3}-(k +1)\\
+        &= (k^3 + 3k^2 + 3k +1) - (k +1)\\
+        &= k^3 + 3k^2 + 2k\\
+        &= (3j+k) + 3k^2 + 2k\\
+        &= 3j+ 3k^2 + 3k\\
+        &=3\cdot(j + k^2 + k)\\
+        &\implies true\ for\ n = k + 1
+    \end{align*}
+    \item Show by simple induction that for every natural number $n$, $\sum_{i=0}^{n} 2^{i} = 2^{n+1} - 1$\\
+    $f(n) = 2^{n+1} - 1 $\\
+    Base case:
+    \begin{align*}
+        f(1) &= 2^{1+1} - 1\\
+        f(1) &= 4 - 1\\
+        f(1) &= 3\\
+        f(k) &= 2^{k+1} - 1
+    \end{align*}
+    Induction step:
+    \begin{align*}
+        f(k +1) &= 2^{k + 2} - 1\\
+        f(k +1) &= 2^1 + 2^2 ... + 2^{k} + 2^{k +1}\\
+        &=f(k) + 2^{k +1}\\
+        &=2^{k+1} - 1 + 2^{k +1}\\
+        &=2(2^{k+1}) - 1\\
+        &=2^{1} \cdot 2^{k+1} - 1\\
+        &=2^{k+1 +1} - 1\\
+        &=2^{k+2} - 1\\
+        &\implies true\ for\ n = k + 1
+    \end{align*}
 \end{enumerate}
 \section*{1.4.2: Definition by simple recursion}
 \begin{enumerate}
     \item  Let $f: N \rightarrow N$ be the function defined by putting $f (0) = 0$ and $f(n+1) = n$ for all $n \in N$.
     \begin{enumerate}
         \item Evaluate this function bottom-up for all arguments 0–5.
-        \item Explain what f does by expressing it in explicit terms (i.e. without a recursion).
+        \begin{align*}
+            f(0) &= 0\\
+            f(1) &= 0\\
+            f(2) &= 1\\
+            f(3) &= 2\\
+            f(4) &= 3\\
+            f(5) &= 4
+        \end{align*}
+        \item Explain what f does by expressing it in explicit terms (i.e. without a recursion).\\
+        This function is not recursive, it only returns the antecesor of the current value
     \end{enumerate}
     \item Let $f : N^{+} \rightarrow N$ be the function that takes each positive integer $n$ to the greatest natural number $p$ with $2^{p} \leq n$. Define this function by a simple recursion. (Hint: You will need to divide the recursion step into two cases.)
+    \begin{align*}
+        &f(n) = 0& &, when\ n = 1\\
+        &f(n) = f(n-1)& &, when\ n > 1, \log_{2}(n) \notin N\\
+        &f(n) = f(n-1) + 1& &, when\ n > 1, \log_{2}(n) \in N
+    \end{align*}
     \item Let $g: NXN \rightarrow N$ be defined by putting $g(m,0)= m$ for all $m \in N$ and $g(m,n+1)=f (g(m,n))$ where $f$ is the function defined in part (a) of this exercise.
     \begin{enumerate}
         \item Evaluate $g(3,4)$ top-down.
-        \item Explain what $g$ does by expressing it in explicit terms (i.e. without a recursion).
+        \begin{align*}
+            g(3, 4) &= f(g(3, 3))\\
+            &= f(f(g(3, 2)))\\
+            &= f(f(f(g(3, 1))))\\
+            &= f(f(f(f(g(3, 0)))))\\
+            &= f(f(f(f(f(3)))))\\
+            &= f(f(f(f(2))))\\
+            &= f(f(f(1)))\\
+            &= f(f(0))\\
+            &= f(0)\\
+            &= 0\\
+        \end{align*}
+        \item Explain what $g$ does by expressing it in explicit terms (i.e. without a recursion).\\
+        It substracts the right item from the left, but if the remain is negative, it returns 0
     \end{enumerate}
 \end{enumerate}
 
