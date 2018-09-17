@@ -3,6 +3,7 @@
     \usepackage[margin=0.7in]{geometry}
     \usepackage[parfill]{parskip}
     \usepackage[utf8]{inputenc}
+    \usepackage[mathscr]{euscript}
     \usepackage{amsmath}
     \usepackage{amssymb}
     \usepackage{tikz}
@@ -18,35 +19,110 @@
 \begin{document}
 \section*{1.3.1 Functions: Image, Closure}
 \begin{enumerate}
-    \item The floor function from $R_{+}$ into $N$ is defined by putting $\lfloor{x}\rfloor$ to be the largest integer less than or equal to $x$. What are the images under the floor function of the sets
+    \item The floor function from $\mathbb{R}_{+}$ into $\mathbb{N}$ is defined by putting $\lfloor{x}\rfloor$ to be the largest integer less than or equal to $x$. What are the images under the floor function of the sets
     \begin{enumerate}
         \item $[0, 1] = \{x \in R: 0 \leq x \leq 1 \}$
+        \begin{equation*}
+            Image(Floor([0, 1])) = \{0, 1\}
+        \end{equation*}
         \item $[0, 1) = \{x \in R: 0 \leq x < 1 \}$
+        \begin{equation*}
+            Image(Floor([0, 1))) = \{0\}
+        \end{equation*}
         \item $(0, 1] = \{x \in R: 0 < x \leq 1 \}$
+        \begin{equation*}
+            Image(Floor((0, 1])) = \{0, 1\}
+        \end{equation*}
         \item $(0, 1) = \{x \in R: 0 < x < 1 \}$
+        \begin{equation*}
+            Image(Floor((0, 1))) = \{0\}
+        \end{equation*}
     \end{enumerate}
     \item Let $f : A\rightarrow A$ be a function from set $A$ into itself. Show that for all $X \subseteq A$, $f(X) \subseteq f[X]$, and give a simple example of the failure of the converse inclusion.
-    \item Show that when then $f(A) \subseteq A$ then $f[A] = A$
-    \item Show that for any partition of $A$, the function $f$ taking each element $a \in A$ to its cell is a function on $A$ into the power set $P(A)$ of $A$ with the partition as its range.
-    \item Let $f: A \rightarrow B$ be a function from set $A$ into set $B$. Recall the ‘abstract inverse’ function$f^{-1}: B \rightarrow P(A)$ defined at the end of Slide 52 by putting $f^{-1}(b) = \{a \in A: f(a) = b\}$ for each $b \in B$.
+    \begin{align*}
+        f[X] &= \{a \in A: f(x) = a, x \in X\}\\
+        \forall x\in X, x \in A &\implies f[X] = \{a \in A: f(x) = a, x \in A\}\\
+        &\implies f(x) \rightarrow A
+    \end{align*}
+    \item Show that when $f(A) \subseteq A$ then $f[A] = A$
+    \begin{align*}
+        f(A) \subseteq A &\implies  f[A] = \{a \in A: f(x) = a\}\\
+        &\implies \forall a \in f[A], a \in A 
+    \end{align*}
+    \item Show that for any partition of $A$, the function $f$ taking each element $a \in A$ to its cell is a function on $A$ into the power set $\mathscr{P}(A)$ of $A$ with the partition as its range.
+    \begin{align*}
+        f: A &\rightarrow \mathscr{P}(A)\\
+        range(f) &= \mathcal{P}(A)\\
+        \forall X \in \mathcal{P}(A)\\
+    \end{align*}
+    \item Let $f: A \rightarrow B$ be a function from set $A$ into set $B$. Recall the ‘abstract inverse’ function$f^{-1}: B \rightarrow \mathcal{P}(A)$ defined at the end of Slide 52 by putting $f^{-1}(b) = \{a \in A: f(a) = b\}$ for each $b \in B$.
     \begin{enumerate}
         \item Show that the collection of all sets for $b \in f(A) \subseteq B$ is a partition of $A$ in the sense defined in Chapter 2 of the David Makinson’s book.
-        \item Is this still the case if we include in the collection the sets $f^{-1}(b)$ for $b \in B \setminus f(A)$?
+        \begin{align*}
+            \mathcal{P}(A) &= \{ A_{i}: i \in I, \forall a_{i} \in A_{i}, A_{i} \neq \emptyset, A_{i} \cap A_{i'} = \emptyset \}\\
+            \{a \in A: f(a) = b, b \in B\} &= \mathcal{P}(A)\\
+            \forall a \in A, \exists b \in B : f(a) = b &\implies f^{-1}(b_{i}) \cap f^{-1}(b_{i'}) = \emptyset\\
+            &\implies f^{-1}(B) = \mathcal{P}(A)
+        \end{align*}
+        \item Is this still the case if we include in the collection the sets $f^{-1}(b)$ for $b \in B \setminus f(A)$?\\
+        Depends in if $f$ is bijective, if it is, B then would just add an empty set, which would not affect the partition, but if B is not srujective, then $f^{-1}$ would be greater that $\mathcal{P}(A)$
     \end{enumerate}
 \end{enumerate}
-\section*{1.3.2 Injections, surjections, bijections }
+\section*{1.3.2 Injections, surjections, bijections}
 \begin{enumerate}
-    \item Is the floor function from $R_{+}$ into $N$ injective? (ii) Is it onto $N$?
+    \item Is the floor function from $\mathbb{R}_{+}$ into $\mathbb{N}$ injective?\\
+    No, because several values from $\mathbb{R}_{+}$ map to the same values in $\mathbb{N}$, An exaple is that 1.01, 1.1, 1.9 all map to 1
     \item Show that the composition of two bijections is a bijection. You may make use of results of exercises in the previous slides on injectivity and surjectivity.
+    \begin{align*}
+        f: A &\rightarrow B & g: B &\rightarrow C\\
+        \forall a \in A,&\ \exists b \in B: f(a) = b & \forall b \in B,&\ \exists c \in C: g(b) = c\\
+        f(a) = f(a') &\iff a = a' & g(b) = g(b') &\iff b = b'
+    \end{align*}
+    \begin{align*}
+        g \circ f &\implies \forall a \in A,\ \exists c \in C: g(f(a)) = c\\
+        &\implies g(f(a)) = g(f(a')) \iff a = a'\\
+        &\implies g \circ f\ is\ bijective
+    \end{align*}
     \item Use the equinumerosity principle to show that there is never any bijection between a finite set and any of its proper subsets.
+    \begin{align*}
+        \#(A) = \#(B) &\iff f: A \rightarrow B\ is\ bijective\\
+        B \subset A &\implies B = \{\forall b \in B, b \in A \},\ A \setminus B \neq \emptyset\\
+        B \subset A &\implies \exists a \in A: f(a) \notin B\\
+        &\implies f\ is\ not\ bijective\\
+        &\implies \#(A) \neq \#(B)
+    \end{align*}
     \item Give an example to show that there can be a bijection between an infinite set and certain of its proper subsets.
+    \begin{align*}
+        A = \mathbb{N}, &B = \mathbb{N}_{+}\\
+        f: A \rightarrow B &= f(a) = a + 1\\
+        f(0) = 1, f(1) = 2 &... f(n) = n + 1
+    \end{align*}
     \item Use the principle of comparison to show that for finite sets $A$, $B$, if there are injective functions $f : A \rightarrow B$ and $g: B \rightarrow A$, then there is a bijection from $A$ to $B$. (Hint: Consider the superposition $g \circ f$ and establish that it provides for a desired bijection).
+    \begin{align*}
+        f: A &\rightarrow B & g: B &\rightarrow A\\
+        \forall a \in A,&\ \exists b \in B: f(a) = b & \forall b \in B,&\ \exists a \in A: g(b) = a\\
+        f(a) = f(a') &\iff a = a' & g(b) = g(b') &\iff b = b'
+    \end{align*}
+    \begin{align*}
+        g \circ f &: A \rightarrow A\\
+        f \circ g &: B \rightarrow B\\
+        &\implies \forall a \in A,\ \exists b \in B\\
+        &\implies A\ and\ B\ are\ bijective
+    \end{align*}
 \end{enumerate}
+\newpage
 
 \section*{1.3.3 Pigeonhole principle}
 \begin{enumerate}
-    \item If a set $A$ is partitioned into n cells, how many distinct elements of $A$ need to be selected to guarantee that at least two of them are in the same cell?
+    \item If a set $A$ is partitioned into n cells, how many distinct elements of $A$ need to be selected to guarantee that at least two of them are in the same cell?\\
+    $n + 1$
     \item Let $K =\{1,2,3,4,5,6,7,8\}$. How many distinct numbers must be selected from $K$ to guarantee that there are two of them that sum to 9? (Hint: Let $A$ be the set of all unordered pairs $(x,y)$ with $x,y \in K$ and $x+y = 9$. Check that this set forms a partition of K and apply the preceding part of the exercise).
+    \begin{align*}
+        A &= \{{x, y}: x, y \in K, x + y = 9 \}\\
+        A &= \{\{1, 8\}, \{2, 7\}, \{3, 6\}, \{4, 5\}\}\\
+        A &= \mathcal{P}(K)\\
+        \#(A) = 4 &\implies You\ need\ 5\ numbers
+    \end{align*}
 \end{enumerate}
 
 \section*{1.3.4 Handy functions}
@@ -54,7 +130,18 @@
     \item Let $f: A \rightarrow B$ and $g: B \rightarrow C$.
     \begin{enumerate}
         \item Show that if at least one of $f$, $g$ is a constant function, then $g \circ f : A \rightarrow C$ is a constant function.
+        \begin{align*}
+            f\ is\ constant &\implies \exists b \in B \forall a \in A: f(a) = b\\
+            &\implies f(A) = b\\
+            g \circ f &\implies \exists c \in C \forall a \in A: g(f(a)) = c
+        \end{align*}
         \item If $g \circ f : A \rightarrow C$ is a constant function, does it follow that at least one of $f$,$g$ is a constant function (give a verification or a counterexample).
+        \begin{align*}
+            g \circ f &\implies \exists c \in C \forall a \in A: g(f(a)) = c\\
+            &\implies f(A) = b \vee g(B) = c\\
+            &\implies\exists b \in B \forall a \in A: f(a) = b \vee \exists c \in C \forall b \in B: g(b) = c\\
+            &\implies f\ is\ constant\ or\ g\ is\ constant
+        \end{align*}
     \end{enumerate}
 \end{enumerate}
 \end{document}
