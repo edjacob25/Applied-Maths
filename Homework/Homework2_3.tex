@@ -1,0 +1,32 @@
+\documentclass{article}
+    % General document formatting
+    \usepackage[margin=0.7in]{geometry}
+    \usepackage[parfill]{parskip}
+    \usepackage[utf8]{inputenc}
+    \usepackage{amsmath}
+    \usepackage{tikz}
+    \usepackage{fancyhdr}
+
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{Edgar Jacob Rivera Rios - A01184125}
+
+\begin{document}
+\section*{2.3.1 Propositional Logic.}
+Prove the following logical equivalences making use of semantic tableaux:
+\renewcommand{\labelenumi}{\alph{enumi})}
+\begin{enumerate}
+    \item $A \wedge (B \vee C) \equiv (A \wedge B) \vee (A \wedge C)$
+    \item $A \vee B \equiv \neg(\neg A \wedge \neg B)$
+    \item $A \wedge B \equiv \neg(\neg A \vee \neg B)$
+    \item $A \rightarrow B \equiv \neg A \vee B$
+    \item $A \rightarrow B \equiv \neg ( A \wedge \neg B)$
+\end{enumerate}
+
+\section*{2.3.2 Propositional Logic.}
+Prove or disprove making use of semantic tableaux:
+\begin{enumerate}
+    \item $\models (A \rightarrow B) \vee (B \rightarrow A)$
+    \item $\models ((A \rightarrow B) \rightarrow B) \rightarrow B$
+\end{enumerate}
+\end{document}

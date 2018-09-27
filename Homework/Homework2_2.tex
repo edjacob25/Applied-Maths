@@ -1,0 +1,239 @@
+\documentclass{article}
+    % General document formatting
+    \usepackage[margin=0.7in]{geometry}
+    \usepackage[parfill]{parskip}
+    \usepackage[utf8]{inputenc}
+    \usepackage{amsmath}
+    \usepackage{tikz}
+    \usepackage{fancyhdr}
+
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{Edgar Jacob Rivera Rios - A01184125}
+
+\begin{document}
+\section*{2.2.1 Propositional Logic.}
+Prove the following logical equivalences making use of truth tables:
+\renewcommand{\labelenumi}{\alph{enumi})}
+\begin{enumerate}
+    \item $A \wedge (B \vee C) \equiv (A \wedge B) \vee (A \wedge C)$
+    \begin{table}[h!]
+        \centering
+        \begin{tabular}{|c|c|c|c||c|}
+            \hline
+            \textbf{A} & \textbf{B} & \textbf{C} & \textbf{$A \wedge (B \vee C)$} & \textbf{$(A \wedge B) \vee (A \wedge C)$}\\
+            \hline
+            1 & 1 & 1 & 1 & 1\\
+            \hline
+            1 & 1 & 0 & 1 & 1\\
+            \hline
+            1 & 0 & 1 & 1 & 1\\
+            \hline
+            1 & 0 & 0 & 0 & 0\\
+            \hline
+            0 & 1 & 1 & 0 & 0\\
+            \hline
+            0 & 1 & 0 & 0 & 0\\
+            \hline
+            0 & 0 & 1 & 0 & 0\\
+            \hline
+            0 & 0 & 0 & 0 & 0\\
+            \hline
+        \end{tabular}
+    \end{table}
+
+    \item $A \vee B \equiv \neg(\neg A \wedge \neg B)$
+    \begin{table}[h!]
+        \centering
+        \begin{tabular}{|c|c|c||c|}
+            \hline
+            \textbf{A} & \textbf{B} & \textbf{$A \vee B$} & \textbf{$\neg(\neg A \wedge \neg B)$}\\
+            \hline
+            1 & 1 & 1 & 1 \\
+            \hline
+            1 & 0 & 1 & 1 \\
+            \hline
+            0 & 1 & 1 & 1 \\
+            \hline
+            0 & 0 & 0 & 0 \\
+            \hline
+        \end{tabular}
+    \end{table}
+
+    \item $A \wedge B \equiv \neg(\neg A \vee \neg B)$
+    \begin{table}[h!]
+        \centering
+        \begin{tabular}{|c|c|c||c|}
+            \hline
+            \textbf{A} & \textbf{B} & \textbf{$A \wedge B$} & \textbf{$\neg(\neg A \vee \neg B)$}\\
+            \hline
+            1 & 1 & 1 & 1 \\
+            \hline
+            1 & 0 & 0 & 0 \\
+            \hline
+            0 & 1 & 0 & 0 \\
+            \hline
+            0 & 0 & 0 & 0 \\
+            \hline
+        \end{tabular}
+    \end{table}
+
+    \item $A \rightarrow B \equiv \neg A \vee B$
+    \begin{table}[h!]
+        \centering
+        \begin{tabular}{|c|c|c||c|}
+            \hline
+            \textbf{A} & \textbf{B} & \textbf{$A \rightarrow B$} & \textbf{$\neg A \vee B$}\\
+            \hline
+            1 & 1 & 1 & 1 \\
+            \hline
+            1 & 0 & 0 & 0 \\
+            \hline
+            0 & 1 & 1 & 1 \\
+            \hline
+            0 & 0 & 1 & 1 \\
+            \hline
+        \end{tabular}
+    \end{table}
+
+    \item $A \rightarrow B \equiv \neg(A \wedge \neg B)$
+    \begin{table}[h!]
+        \centering
+        \begin{tabular}{|c|c|c||c|}
+            \hline
+            \textbf{A} & \textbf{B} & \textbf{$A \rightarrow B$} & \textbf{$\neg(A \wedge \neg B)$}\\
+            \hline
+            1 & 1 & 1 & 1 \\
+            \hline
+            1 & 0 & 0 & 0 \\
+            \hline
+            0 & 1 & 1 & 1 \\
+            \hline
+            0 & 0 & 1 & 1 \\
+            \hline
+        \end{tabular}
+    \end{table}
+    \newpage
+
+    \item $((A \oplus B) \oplus B ) \equiv A$
+    \begin{table}[h!]
+        \centering
+        \begin{tabular}{|c|c|c||c|}
+            \hline
+            \textbf{A} & \textbf{B} & \textbf{$((A \oplus B) \oplus B )$} & \textbf{$A$}\\
+            \hline
+            1 & 1 & 1 & 1 \\
+            \hline
+            1 & 0 & 1 & 1 \\
+            \hline
+            0 & 1 & 0 & 0 \\
+            \hline
+            0 & 0 & 0 & 0 \\
+            \hline
+        \end{tabular}
+    \end{table}
+
+    \item $((A \leftrightarrow B) \leftrightarrow B) \equiv A$
+    \begin{table}[h!]
+        \centering
+        \begin{tabular}{|c|c|c||c|}
+            \hline
+            \textbf{A} & \textbf{B} & \textbf{$((A \leftrightarrow B) \leftrightarrow B)$} & \textbf{$A$}\\
+            \hline
+            1 & 1 & 1 & 1 \\
+            \hline
+            1 & 0 & 1 & 1 \\
+            \hline
+            0 & 1 & 0 & 0 \\
+            \hline
+            0 & 0 & 0 & 0 \\
+            \hline
+        \end{tabular}
+    \end{table}
+
+\end{enumerate}
+
+\section*{2.2.2 Propositional Logic.}
+Prove or disprove making use of truth tables:
+\begin{enumerate}
+    \item $\models (A \rightarrow B) \vee (B \rightarrow A)$
+    \begin{table}[h!]
+        \centering
+        \begin{tabular}{|c|c|c|}
+            \hline
+            \textbf{A} & \textbf{B} & \textbf{$(A \rightarrow B) \vee (B \rightarrow A)$}\\
+            \hline
+            1 & 1 & 1 \\
+            \hline
+            1 & 0 & 1 \\
+            \hline
+            0 & 1 & 1 \\
+            \hline
+            0 & 0 & 1 \\
+            \hline
+        \end{tabular}
+    \end{table}
+
+    \item $\models ((A \rightarrow B) \rightarrow B) \rightarrow B$
+    \begin{table}[h!]
+        \centering
+        \begin{tabular}{|c|c|c|}
+            \hline
+            \textbf{A} & \textbf{B} & \textbf{$((A \rightarrow B) \rightarrow B) \rightarrow B$}\\
+            \hline
+            1 & 1 & 1 \\
+            \hline
+            1 & 0 & 0 \\
+            \hline
+            0 & 1 & 1 \\
+            \hline
+            0 & 0 & 1 \\
+            \hline
+        \end{tabular}
+    \end{table}
+    \item $\models (A \leftrightarrow B) \leftrightarrow (A \leftrightarrow (B \leftrightarrow A))$
+    \begin{table}[h!]
+        \centering
+        \begin{tabular}{|c|c|c|}
+            \hline
+            \textbf{A} & \textbf{B} & \textbf{$ (A \leftrightarrow B) \leftrightarrow (A \leftrightarrow (B \leftrightarrow A))$}\\
+            \hline
+            1 & 1 & 1 \\
+            \hline
+            1 & 0 & 1 \\
+            \hline
+            0 & 1 & 0 \\
+            \hline
+            0 & 0 & 0 \\
+            \hline
+        \end{tabular}
+    \end{table}
+    \newpage
+
+    \item $\models ((A \wedge B) \rightarrow C) \rightarrow ((A \rightarrow C) \vee (B \rightarrow C))$
+    \begin{table}[h!]
+        \centering
+        \begin{tabular}{|c|c|c|c|}
+            \hline
+            \textbf{A} & \textbf{B} & \textbf{C}  & \textbf{$((A \wedge B) \rightarrow C) \rightarrow ((A \rightarrow C) \vee (B \rightarrow C))$}\\
+            \hline
+            1 & 1 & 1 & 1 \\
+            \hline
+            1 & 1 & 0 & 1 \\
+            \hline
+            1 & 0 & 1 & 1 \\
+            \hline
+            1 & 0 & 0 & 1 \\
+            \hline
+            0 & 1 & 1 & 1 \\
+            \hline
+            0 & 1 & 0 & 1 \\
+            \hline
+            0 & 0 & 1 & 1 \\
+            \hline
+            0 & 0 & 0 & 1 \\
+            \hline
+        \end{tabular}
+    \end{table}
+\end{enumerate}
+\end{document}
