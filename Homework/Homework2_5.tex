@@ -24,21 +24,21 @@ Prove $\models \neg \diamond \neg p \rightarrow \Box p$ (the converse direction 
     \neg \diamond \neg p &= True\\
     \diamond \neg p &= False\\
     \forall s \in S&,\ \forall S_{i} \in \mathscr{I}(s)\\
-    S_{i}(P) &= T \equiv \Box p
+    S_{i}(P) &= True \equiv \Box p
 \end{align*}
 \begin{center}
     \begin{tikzpicture}[sibling distance=13em, every node/.style = {align=center}]
       \node {$\neg(\neg \diamond \neg p \rightarrow \Box p)$}
-        child { node {$\neg \diamond \neg p \wedge \neg \Box p$}
-          child {node {$\neg \diamond \neg p, \neg \Box p$}
-            child {node {$\exists s \in S,\ S_{i} \in \mathscr{I}(j)$}
-              child {node {$p, \neg p$\\$\times$}
-              edge from parent [solid] node [right] {}}
-            edge from parent [dashed] node [right] {instantiation}}
-          edge from parent node [right] {$\alpha$}}
+        child {node {$\neg \diamond \neg p, \neg \Box p$}
+          child {node {$\exists s \in S,\ S_{i} \in \mathscr{I}(j)$}
+            child {node {$p, \neg p$\\$\times$}
+            edge from parent [solid] node [right] {}}
+          edge from parent [dashed] node [right] {instantiation}}
         edge from parent node [right] {$\alpha$}};
     \end{tikzpicture}
 \end{center}
+By contradiction of the inverse, it's proved true
+
 \section*{Exercise 2.5.4. Linear Temporal Logic (LTL)}
 Prove Theorem 13.15 from Ben-Ari, M.:  $\models \Box (p \rightarrow q) \rightarrow (\Box p \rightarrow \Box q)$.
 \begin{align*}
@@ -61,4 +61,5 @@ Prove Theorem 13.15 from Ben-Ari, M.:  $\models \Box (p \rightarrow q) \rightarr
         edge from parent node [right] {$\alpha$}};
     \end{tikzpicture}
 \end{center}
+By contradiction of the inverse, it's proved true
 \end{document}
