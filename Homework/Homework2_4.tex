@@ -138,7 +138,60 @@ Prove that the following formulas are valid
     \end{tikzpicture}\\
     It's true by contradiction of the inverse implications
     \item $(\exists x A(x) \rightarrow \forall x B(x)) \rightarrow \forall x(A(x) \rightarrow B(x))$
+    \begin{center}
+      \begin{tikzpicture}[sibling distance=13em, every node/.style = {align=center}]
+        \node {$\neg ((\exists x A(x) \rightarrow \forall x B(x)) \rightarrow \forall x(A(x) \rightarrow B(x)))$}
+          child {node {$(\exists x A(x) \rightarrow \forall x B(x)), \neg \forall x(A(x) \rightarrow B(x))$}
+            child {node {$\neg \exists x A(x),\neg \forall x(A(x) \rightarrow B(x)))$}
+              child {node {$\neg A(a), \neg (A(a) \rightarrow B(a))$}
+                child {node {$\neg A(a), A(a) , \neg B(a)$\\$\times$}
+                edge from parent [solid] node [right] {$\alpha$}}
+              edge from parent [dashed] node [right] {instantiation}}
+            edge from parent node [left] {$\beta$}}
+            child {node {$\forall x B(x),\neg \forall x(A(x) \rightarrow B(x))$}
+              child {node {$B(a), \neg (A(a) \rightarrow B(a))$}
+                child {node {$B(a), A(a) , \neg B(a)$\\$\times$}
+                edge from parent [solid] node [right] {$\alpha$}}
+              edge from parent [dashed] node [right] {instantiation}}
+            edge from parent node [right] {$\beta$}}
+          edge from parent node [right] {$\alpha$}};
+      \end{tikzpicture}
+    \end{center}
+    It's true by contradiction of the inverse
+    \pagebreak
     \item $\forall x (A(x) \vee B(x)) \rightarrow (\forall x A(x) \vee \exists x B(x))$
+    \begin{center}
+      \begin{tikzpicture}[sibling distance=13em, every node/.style = {align=center}]
+        \node {$\neg(\forall x (A(x) \vee B(x)) \rightarrow (\forall x A(x) \vee \exists x B(x)))$}
+          child {node {$\forall x (A(x) \vee B(x)), \neg (\forall x A(x) \vee \exists x B(x))$}
+            child {node {$\forall x (A(x) \vee B(x)), \neg \forall x A(x), \neg \exists x B(x)$}
+              child {node {$(A(a) \vee B(a)), \neg A(a), \neg B(a)$}
+                child {node {$A(a), \neg A(a), \neg B(a)$\\$\times$}
+                edge from parent [solid] node [left] {$\beta$}}
+                child {node {$B(a), \neg A(a), \neg B(a)$\\$\times$}
+                edge from parent [solid] node [right] {$\beta$}}
+              edge from parent [dashed] node [right] {instantiation}}
+            edge from parent node [right] {$\alpha$}}
+          edge from parent node [right] {$\alpha$}};
+      \end{tikzpicture}
+    \end{center}
+    It's true by contradiction of the inverse
     \item $\forall x (A(x) \rightarrow B(x)) \rightarrow (\exists x A(x) \rightarrow \exists x B(x))$
+    \begin{center}
+      \begin{tikzpicture}[sibling distance=13em, every node/.style = {align=center}]
+        \node {$\neg(\forall x (A(x) \rightarrow B(x)) \rightarrow (\exists x A(x) \rightarrow \exists x B(x)))$}
+          child {node {$\forall x (A(x) \rightarrow B(x)), \neg (\exists x A(x) \rightarrow \exists x B(x))$}
+            child {node {$\forall x (A(x) \rightarrow B(x)), \exists x A(x), \neg \exists x B(x)$}
+              child {node {$(A(a) \rightarrow B(a)), A(a), \neg B(a)$}
+                child {node {$ \neg A(a), A(a), \neg B(a)$\\$\times$}
+                edge from parent [solid] node [left] {$\beta$}}
+                child {node {$B(a), A(a), \neg B(a)$\\$\times$}
+                edge from parent [solid] node [right] {$\beta$}}
+              edge from parent [dashed] node [right] {instantiation}}
+            edge from parent node [right] {$\alpha$}}
+          edge from parent node [right] {$\alpha$}};
+      \end{tikzpicture}
+    \end{center}
+    It's true by contradiction of the inverse
 \end{itemize}
 \end{document}
