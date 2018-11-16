@@ -1,0 +1,69 @@
+\documentclass{article}
+    % General document formatting
+    \usepackage[margin=0.7in]{geometry}
+    \usepackage[parfill]{parskip}
+    \usepackage[utf8]{inputenc}
+    \usepackage{mathrsfs}
+    \usepackage{amsmath}
+    \usepackage{amssymb}
+    \usepackage{tikz}
+    \usepackage{fancyhdr}
+    \usepackage{multicol}
+    \usepackage{diagbox}
+
+    \usetikzlibrary{positioning}
+
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{Edgar Jacob Rivera Rios - A01184125}
+
+\renewcommand{\labelenumi}{\alph{enumi})}
+
+\begin{document}
+\section*{6.2.1}
+Four freight vessels are used to carry goods from one port to other four ports (numerated by 1, 2, 3 and 4). Any vessel can be used to fulfil any of the four transportations. However, given some differences among the ships and the freights, the total transportation cost is much different for distinct combinations of ships and ports. These costs are in the following table:
+
+\begin{table}[h!]
+    \centering
+    \begin{tabular}{| c | c | c | c | c |}
+        \hline
+        \diagbox{Ships}{Ports}& 1 & 2 & 3 & 4\\
+        \hline
+        1& 5 & 4 & 6 & 7\\
+        &&&&\\
+        2& 6 & 6 & 7 & 5\\
+        &&&&\\
+        3& 7 & 5 & 7 & 6\\
+        &&&&\\
+        4& 5 & 4 & 6 & 6\\
+        \hline
+    \end{tabular}
+\end{table}
+\begin{enumerate}
+    \item Describe how it is possible formulate this problem as an assignment problem.
+    \item Solve the problem by the Hungarian method.
+\end{enumerate}
+
+\section*{6.1.2}
+Five employees are available to perform four jobs. The time it takes each person to perform each job is given in Table 6.2 (dashes indicate person cannot do that particular job.) Determine the assignment of employees to jobs that minimizes the total time required to perform the four jobs.
+\begin{table}[h!]
+    \centering
+    \begin{tabular}{| c | c c c c |}
+        \hline
+        \multicolumn{5}{|c|}{Time(Hours)} \\
+        \hline
+        Persons & Job 1 & Job 2 & Job 3 & Job 4\\
+        \hline
+        1& 22 & 18 & 30 & 18\\
+        &&&&\\
+        2& 18 & -- & 27 & 22\\
+        &&&&\\
+        3& 26 & 20 & 28 & 28\\
+        &&&&\\
+        4& 16 & 22 & -- & 14\\
+        &&&&\\
+        5& 21 & -- & 25 & 28\\
+        \hline
+    \end{tabular}
+\end{table}
+\end{document}

@@ -1,0 +1,50 @@
+\documentclass{article}
+    % General document formatting
+    \usepackage[margin=0.7in]{geometry}
+    \usepackage[parfill]{parskip}
+    \usepackage[utf8]{inputenc}
+    \usepackage{mathrsfs}
+    \usepackage{amsmath}
+    \usepackage{amssymb}
+    \usepackage{tikz}
+    \usepackage{fancyhdr}
+    \usepackage{multicol}
+
+    \usetikzlibrary{positioning}
+
+\pagestyle{fancy}
+\fancyhf{}
+\rhead{Edgar Jacob Rivera Rios - A01184125}
+
+\renewcommand{\labelenumi}{\alph{enumi})}
+
+\begin{document}
+\section*{6.1.1}
+\begin{equation*}
+  Z = -3x_{1} + 2x_{2} + 10x_{3} - x_{4} \rightarrow max
+\end{equation*}
+s.t
+\begin{align*}
+-x_{1} + 2x_{2} - 3x_{3} + 4x_{4} &\leq 7\\
+       - 3x_{2} + 2x_{3} - 5x_{4} &\leq 12\\
+2x_{1} + 2x_{2}          + 7x_{4} &\leq 15\\
+x_{j} \geq 0, j &= 1, 2, 3, 4
+\end{align*}
+\begin{enumerate}
+  \item Rewrite the problem as an augmented LP problem ready to be solved by the simplex method.
+  \item Work through the simplex method step by step to solve the augmented LP problem.
+\end{enumerate}
+
+\section*{6.1.2}
+Work through the simplex method step by step to solve the following problem
+Maximize
+\begin{equation*}
+  Z = 4x_{1} + 3x_{2} + 6x_{3}
+\end{equation*}
+\begin{align*}
+  3x_{1} + x_{2} + 3x_{3} &\leq 30\\
+  2x_{1} + 2x_{2} + 3x_{3} &\geq 10\\
+  x_{1} \geq 0, x_{2} \geq 0, x_{3} &\geq 0,
+\end{align*}
+
+\end{document}
