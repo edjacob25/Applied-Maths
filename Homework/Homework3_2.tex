@@ -23,31 +23,125 @@
 In an effort to estimate the mean amount spent per customer for dinner at a major Atlanta restaurant, data were collected for a sample of 49 customers. Assume a population standard deviation of \$5.
 \begin{enumerate}
   \item At 95\% confidence, what is the margin of error?
+  \begin{align*}
+    \sigma &= 5\\
+    n &= 49\\
+    \text{Error Margin} &= Z_{a/2}(\sigma / \sqrt{n})\\
+    &=Z_{.05/2}(5/ \sqrt{49})\\
+    &=Z_{.025}(5/7)\\
+    &=1.96(5/7)\\
+    &=1.4\\
+  \end{align*}
   \item If the sample mean is \$24.80, what is the 95\% confidence interval for the population mean?
+  \begin{align*}
+    \bar{x} &= 24.80\\
+    interval &= \bar{x} \pm \text{Error Margin}\\
+    &= 24.80 \pm 1.4\\
+    &= (23.40, 26.20)
+  \end{align*}
 \end{enumerate}
 
 \section*{3.2.2}
 The Wall Street Journal reported that automobile crashes cost the United States \$162 billion annually (The Wall Street Journal, March 5, 2008). The average cost per person for crashes in the Tampa, Florida, area was reported to be \$1,599. Suppose this average cost was based on a sample of 50 persons who had been involved in car crashes and that the population standard deviation is $\sigma = 600$
 \begin{enumerate}
   \item What is the margin of error for a 95\% confidence interval?
+  \begin{align*}
+    \sigma &= 600\\
+    n &= 50\\
+    \text{Error Margin} &= Z_{a/2}(\sigma / \sqrt{n})\\
+    &=Z_{.05/2}(600/ \sqrt{50})\\
+    &=Z_{.025}(84.8528137423)\\
+    &=1.96(84.8528137423)\\
+    &=166.311514\\
+  \end{align*}
   \item What would you recommend if the study required a margin of error of \$150 or less?
+
+  We should reduce the confidence interval to get a smaller error margin
 \end{enumerate}
+
+\pagebreak
 
 \section*{3.2.3}
 The National Quality Research Center at the University of Michigan provides a quarterly measure of consumer opinions about products and services (The Wall Street Journal, February 18, 2003). A survey of 10 restaurants in the Fast Food/Pizza group showed a sample mean customer satisfaction index of 71. Past data indicate that the population standard deviation of the index has been relatively stable with $\sigma = 5$.
 \begin{enumerate}
   \item What assumption should the researcher be willing to make if a margin of error is desired?
+
+  That the data has a normal distribution and that you can based the margins in that
+
   \item Using 95\% confidence, what is the margin of error?
+  \begin{align*}
+    \sigma &= 5\\
+    n &= 10\\
+    \text{Error Margin} &= Z_{a/2}(\sigma / \sqrt{n})\\
+    &=Z_{.05/2}(5/ \sqrt{10})\\
+    &=Z_{.025}(1.58113883)\\
+    &=1.96(1.58113883)\\
+    &=3.0990321\\
+  \end{align*}
+
   \item What is the margin of error if 99\% confidence is desired?
+  \begin{align*}
+    \sigma &= 5\\
+    n &= 10\\
+    \text{Error Margin} &= Z_{a/2}(\sigma / \sqrt{n})\\
+    &=Z_{.01/2}(5/ \sqrt{10})\\
+    &=Z_{.005}(1.58113883)\\
+    &=2.576(1.58113883)\\
+    &=4.07301362\\
+  \end{align*}
 \end{enumerate}
 
 \section*{3.1.4}
 Playbill magazine reported that the mean annual household income of its readers is \$119,155 (Playbill, January 2006). Assume this estimate of the mean annual household income is based on a sample of 80 households, and based on past studies, the population standard deviation is known to be $\sigma = \$30,000$.
 \begin{enumerate}
   \item Develop a 90\% confidence interval estimate of the population mean.
+  \begin{align*}
+    \sigma &= 30,000\\
+    n &= 80\\
+    \bar{x} &= 119,155\\
+    \text{Error Margin} &= Z_{a/2}(\sigma / \sqrt{n})\\
+    &=Z_{.1/2}(30,000/ \sqrt{80})\\
+    &=Z_{.05}(3354.101966)\\
+    &=1.645(3354.101966)\\
+    &=5,517.4977344\\
+    interval &= \bar{x} \pm \text{Error Margin}\\
+    &= 119,155 \pm 5,517.4977344\\
+    &= (2113637.5022656, 124672.4977344)
+  \end{align*}
+
   \item Develop a 95\% confidence interval estimate of the population mean.
+  \begin{align*}
+    \sigma &= 30,000\\
+    n &= 80\\
+    \bar{x} &= 119,155\\
+    \text{Error Margin} &= Z_{a/2}(\sigma / \sqrt{n})\\
+    &=Z_{.05/2}(30,000/ \sqrt{80})\\
+    &=Z_{.025}(3354.101966)\\
+    &=1.96(3354.101966)\\
+    &=6,574.0398538\\
+    interval &= \bar{x} \pm \text{Error Margin}\\
+    &= 119,155 \pm 6,574.0398538\\
+    &= (112580.9601462, 125729.0398538
+    )
+  \end{align*}
+
   \item Develop a 99\% confidence interval estimate of the population mean.
+  \begin{align*}
+    \sigma &= 30,000\\
+    n &= 80\\
+    \bar{x} &= 119,155\\
+    \text{Error Margin} &= Z_{a/2}(\sigma / \sqrt{n})\\
+    &=Z_{.01/2}(30,000/ \sqrt{80})\\
+    &=Z_{.005}(3354.101966)\\
+    &=2.576(3354.101966)\\
+    &=8,640.166665\\
+    interval &= \bar{x} \pm \text{Error Margin}\\
+    &= 119,155 \pm 8,640.166665\\
+    &= (110514.833335, 127795.166665)
+  \end{align*}
   \item Discuss what happens to the width of the confidence interval as the confidence level is increased. Does this result seem reasonable? Explain.
+
+  We can see that the width of the confidence interval grows as the confidence level is increased. It seems reasonable because a confidence interval of 99 must include 99\% of the results, which logically must be a wider part than a 95\% or 90\%.
 \end{enumerate}
 
 \end{document}
