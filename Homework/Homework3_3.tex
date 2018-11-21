@@ -23,25 +23,94 @@
 Sales personnel for Skillings Distributors submit weekly reports listing the customer contacts made during the week.
 A sample of 65 weekly reports showed a sample mean of 19.5 customer contacts per week. The sample standard deviation was 5.2.
 Provide 90\% and 95\% confidence intervals for the population mean number of weekly customer contacts for the sales personnel.
+\begin{align*}
+  \text{Margin} &= 90\%\\
+  s &= 5.2\\
+  n &= 65\\
+  \bar{x} &= 19.5\\
+  \text{Error Margin} &= t_{\alpha/2}(s/ \sqrt{n})\\
+  &=t_{.1/2}(5.2/ \sqrt{65})\\
+  &=t_{.05}(0.644980619863884)\\
+  &=1.669(0.644980619863884)\\
+  &=1.07648105544093\\
+  interval &= \bar{x} \pm \text{Error Margin}\\
+  &= 19.5 \pm 1.07648105544093\\
+  &= (18.4235189445591, 20.5764810554409)
+\end{align*}
+
+\begin{align*}
+  \text{Margin} &= 95\%\\
+  s &= 5.2\\
+  n &= 65\\
+  \bar{x} &= 19.5\\
+  \text{Error Margin} &= t_{\alpha/2}(s/ \sqrt{n})\\
+  &=t_{.05/2}(5.2/ \sqrt{65})\\
+  &=t_{.025}(0.644980619863884)\\
+  &=1.998(0.644980619863884)\\
+  &=1.28849691076229\\
+  interval &= \bar{x} \pm \text{Error Margin}\\
+  &= 19.5 \pm 1.28849691076229\\
+  &= (18.2115030892377, 20.7884969107623)
+\end{align*}
 
 \section*{3.3.2}
 The mean number of hours of flying time for pilots at Continental Airlines is 49 hours per month (The Wall Street Journal, February 25, 2003). Assume that this mean was based on actual flying times for a sample of 100 Continental pilots and that the sample standard deviation was 8.5 hours.
 \begin{enumerate}
   \item At 95\% confidence, what is the margin of error?
+  \begin{align*}
+    \text{Margin} &= 95\%\\
+    s &= 8.5\\
+    n &= 100\\
+    \bar{x} &= 49\\
+    \text{Error Margin} &= t_{\alpha/2}(s/ \sqrt{n})\\
+    &=t_{.05/2}(8.5/ \sqrt{100})\\
+    &=t_{.025}(0.85)\\
+    &=1.984(0.85)\\
+    &=1.68658440884845
+  \end{align*}
+
   \item What is the 95\% confidence interval estimate of the population mean flying time for the pilots?
+  \begin{align*}
+    interval &= \bar{x} \pm \text{Error Margin}\\
+    &= 59 \pm 1.68658440884845\\
+    &= (47.3134155911515, 50.6865844088485 )
+  \end{align*}
+
   \item The mean number of hours of flying time for pilots at United Airlines is 36 hours per month. Use your results from part (b) to discuss differences between the flying times for the pilots at the two airlines. (The Wall Street Journal reported United Airlines as having the highest labor cost among all airlines. Does the information in this exercise provide insight as to why United Airlines might expect higher labor costs?)
+  
+  It's probably because United airlines pilots fly a lot less, so the costs may stay relative high when compared to pilots who fly 10 hours more a month
 \end{enumerate}
 
 \section*{3.3.3}
 The average cost per night of a hotel room in New York City is \$273 (Smart Money, March 2009). Assume this estimate is based on a sample of 45 hotels and that the sample standard deviation is \$65.
 \begin{enumerate}
   \item With 95\% confidence, what is the margin of error?
+  \begin{align*}
+    \text{Margin} &= 95\%\\
+    s &= 65\\
+    n &= 45\\
+    \bar{x} &= 273\\
+    \text{Error Margin} &= t_{\alpha/2}(s/ \sqrt{n})\\
+    &=t_{.05/2}(65/ \sqrt{45})\\
+    &=t_{.025}(9.689)\\
+    &=2.015(9.689)\\
+    &=19.5281618831222
+  \end{align*}
+  
   \item What is the 95\% confidence interval estimate of the population mean?
+  \begin{align*}
+    interval &= \bar{x} \pm \text{Error Margin}\\
+    &= 265 \pm 19.5281618831222\\
+    &= (253.471838116878, 292.528161883122)
+  \end{align*}
+
   \item Two years ago the average cost of a hotel room in New York City was \$229. Discuss the change in cost over the two-year period
+  
+  It seems that the average cost of hotels in New York from two years ago tends to be to the lower estimate of the actual average. Which is normal considering the inflation, which is that costs go up and the money looses value over time.
 \end{enumerate}
 
 \section*{3.3.4}
-s your favorite TV program often interrupted by advertising? CNBC presented statistics on the average number of programming minutes in a half-hour sitcom (CNBC, February 23, 2006). The following data (in minutes) are representative of their findings:
+Is your favorite TV program often interrupted by advertising? CNBC presented statistics on the average number of programming minutes in a half-hour sitcom (CNBC, February 23, 2006). The following data (in minutes) are representative of their findings:
 \begin{table}[h!]
   \centering
   \begin{tabular}{c c c c c c}
@@ -52,4 +121,19 @@ s your favorite TV program often interrupted by advertising? CNBC presented stat
   \end{tabular}
 \end{table}
 Assume the population is approximately normal. Provide a point estimate and a 95\% confidence interval for the mean number of programming minutes during a half-hour television sitcom.
+
+\begin{align*}
+  \text{Margin} &= 95\%\\
+  s &= 1.11702424230396\\
+  n &= 20\\
+  \bar{x} &= 21.998\\
+  \text{Error Margin} &= t_{\alpha/2}(s/ \sqrt{n})\\
+  &=t_{.05/2}(1.11702424230396/ \sqrt{20})\\
+  &=t_{.025}(0.249774213830685)\\
+  &=2.093(0.249774213830685)\\
+  &=0.522783437718549\\
+  interval &= \bar{x} \pm \text{Error Margin}\\
+  &= 21.998 \pm 0.522783437718549\\
+  &= (21.4752165622814, 22.5207834377185)
+\end{align*}
 \end{document}
