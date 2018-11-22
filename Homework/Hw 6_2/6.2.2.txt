@@ -1,0 +1,178 @@
+
+
+
+  Solve an Assignment Problem Interactively:
+  Number of tasks:    5
+  
+  Step :
+  Subtract the smallest number in each row from every number in the row.
+  Enter the results in a new table.
+  
+                            Task
+    Assignee| A      B      C      D      E      | Row Min
+  __________|____________________________________|________
+       1    | 22     18     30     18     0      | 0
+       2    | 18     0      27     22     0      | 0
+       3    | 26     20     28     28     0      | 0
+       4    | 16     22     0      14     0      | 0
+       5    | 21     0      25     28     0      | 0
+            |                                    | 
+  
+  Step :
+  Subtract the smallest number in each column of the new table from every number in the column.
+  
+                            Task
+    Assignee| A      B      C      D      E      |
+  __________|____________________________________|________
+       1    | 22     18     30     18     0      | 
+       2    | 18     0      27     22     0      | 
+       3    | 26     20     28     28     0      | 
+       4    | 16     22     0      14     0      | 
+       5    | 21     0      25     28     0      | 
+  Col Min   | 16     0      0      14     0      | 
+  
+  Step :
+  Enter the results in a new table.
+  
+  
+                            Task
+    Assignee| A      B      C      D      E      |
+  __________|____________________________________|________
+       1    | 6      18     30     4      0      | 
+       2    | 2      0      27     8      0      | 
+       3    | 10     20     28     14     0      | 
+       4    | 0      22     0      0      0      | 
+       5    | 5      0      25     14     0      | 
+            |                                    | 
+  
+  Step :
+  Determine the minimum number of lines needed to cross out all zeros.
+  
+                            Task
+    Assignee| A      B      C      D      E      |
+  __________|____________________________________|________
+            |        |                    |      |
+       1    | 6      18     30     4      0      |
+            |        |                    |      |
+       2    | 2      0      27     8      0      |
+            |        |                    |      |
+       3    | 10     20     28     14     0      |
+
+
+            |        |                    |      |
+       4    |-0------22------0------0------0------|
+            |        |                    |      |
+       5    | 5      0      25     14     0      |
+            |        |                    |      |
+  
+  Step :
+  Select the smallest number from all the uncovered numbers
+  
+                            Task
+    Assignee| A      B      C      D      E      |
+  __________|____________________________________|________
+       1    | 6      18     30     4      0      | 
+       2    | [2]    0      27     8      0      | 
+       3    | 10     20     28     14     0      | 
+       4    | 0      22     0      0      0      | 
+       5    | 5      0      25     14     0      | 
+            |                                    | 
+  
+  Step :
+  The smallest number selected at the preceding step will be subtracted from every uncovered by 
+  number and added to every number at the intersection of covering lines automatically. 
+  
+                            Task
+    Assignee| A      B      C      D      E      |
+  __________|____________________________________|________
+       1    | 4      18     28     2      0      | 
+       2    | 0      0      25     6      0      | 
+       3    | 8      20     26     12     0      | 
+       4    | 0      24     0      0      2      | 
+       5    | 3      0      23     12     0      | 
+            |                                    | 
+  
+  Step :
+  Determine the minimum number of lines needed to cross out all zeros.
+  
+                            Task
+    Assignee| A      B      C      D      E      |
+  __________|____________________________________|________
+            |        |                    |      |
+       1    | 4      18     28     2      0      |
+            |        |                    |      |
+       2    |-0------0------25------6------0------|
+            |        |                    |      |
+       3    | 8      20     26     12     0      |
+            |        |                    |      |
+       4    |-0------24------0------0------2------|
+            |        |                    |      |
+       5    | 3      0      23     12     0      |
+            |        |                    |      |
+  
+  Step :
+  Select the smallest number from all the uncovered numbers
+  
+                            Task
+    Assignee| A      B      C      D      E      |
+
+
+  __________|____________________________________|________
+       1    | 4      18     28     [2]    0      | 
+       2    | 0      0      25     6      0      | 
+       3    | 8      20     26     12     0      | 
+       4    | 0      24     0      0      2      | 
+       5    | 3      0      23     12     0      | 
+            |                                    | 
+  
+  Step :
+  The smallest number selected at the preceding step will be subtracted from every uncovered by 
+  number and added to every number at the intersection of covering lines automatically. 
+  
+                            Task
+    Assignee| A      B      C      D      E      |
+  __________|____________________________________|________
+       1    | 2      18     26     0      0      | 
+       2    | 0      2      25     6      2      | 
+       3    | 6      20     24     10     0      | 
+       4    | 0      26     0      0      4      | 
+       5    | 1      0      21     10     0      | 
+            |                                    | 
+  
+  Step :
+  Determine the minimum number of lines needed to cross out all zeros.
+  
+                            Task
+    Assignee| A      B      C      D      E      |
+  __________|____________________________________|________
+            |                                    |
+       1    |-2------18------26------0------0------|
+            |                                    |
+       2    |-0------2------25------6------2------|
+            |                                    |
+       3    |-6------20------24------10------0------|
+            |                                    |
+       4    |-0------26------0------0------4------|
+            |                                    |
+       5    |-1------0------21------10------0------|
+            |                                    |
+  
+  Make the assignments.
+  
+                            Task
+    Assignee| A      B      C      D      E      |
+  __________|____________________________________|________
+       1    | 2      18     26     0      0      | 
+       2    | 0      2      25     6      2      | 
+       3    | 6      20     24     10     0      | 
+       4    | 0      26     0      0      4      | 
+       5    | 1      0      21     10     0      | 
+  
+  Task D is assigned to Assignee 1
+  Task A is assigned to Assignee 2
+  Task E is assigned to Assignee 3
+  Task C is assigned to Assignee 4
+  Task B is assigned to Assignee 5
+
+
+  
