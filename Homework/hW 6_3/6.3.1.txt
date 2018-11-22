@@ -1,0 +1,65 @@
+
+
+
+  Linear Programming Model:
+  
+  Number of Decision Variables:      3
+  
+  Number of Functional Constraints:  2
+  
+  Min Z =      5 X1 +    3 X2 +    4 X3 
+  
+  subject to
+  
+   1)          2 X1 +    1 X2 +    1 X3 >=      20
+  
+   2)          3 X1 +    1 X2 +    2 X3 >=      30
+  
+  and
+  
+          X1 >= 0, X2 >= 0, X3 >= 0.
+
+
+
+  Solve Interactively by the Modified Simplex Method:
+  
+
+  Bas|Eq|           Coefficient of         | Right
+  Var|No| Z|   X1    X2    X3    X4    X5  |  side
+  ___|__|__|_______________________________|______
+     |  |  |                               | 
+   Z | 0| 1|   -5    -3    -4     0     0  |     0
+   X1| 1| 0|   -2    -1    -1     1     0  |   -20
+   X1| 2| 0|   -3*   -1    -2     0     1  |   -30
+  
+
+  Bas|Eq|           Coefficient of         | Right
+  Var|No| Z|   X1    X2    X3    X4    X5  |  side
+  ___|__|__|_______________________________|______
+     |  |  |                               | 
+   Z | 0| 1|    0 -1.33 -0.67     0 -1.67  |    50
+   X1| 1| 0|   -4 -1.67 -2.33*    1 0.667  |   -40
+   X1| 2| 0|    1 0.333 0.667     0 -0.33  |    10
+  
+
+  Bas|Eq|           Coefficient of         | Right
+  Var|No| Z|   X1    X2    X3    X4    X5  |  side
+  ___|__|__|_______________________________|______
+     |  |  |                               | 
+   Z | 0| 1|1.143 -0.86     0 -0.29 -1.86  | 61.43
+   X3| 1| 0|1.714 0.714     1 -0.43 -0.29  | 17.14
+   X1| 2| 0|-0.14 -0.14*    0 0.286 -0.14  | -1.43
+  
+
+
+  
+
+  Bas|Eq|           Coefficient of         | Right
+  Var|No| Z|   X1    X2    X3    X4    X5  |  side
+  ___|__|__|_______________________________|______
+     |  |  |                               | 
+   Z | 0| 1|    2     0     0    -2    -1  |    70
+   X3| 1| 0|    1     0     1     1    -1  |    10
+   X2| 2| 0|    1     1     0    -2     1  |    10
+  
+  Z*= 70, X1* = 0, X2*=10, x3* = 10
