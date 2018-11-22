@@ -1,0 +1,77 @@
+
+
+
+  Solve an Assignment Problem Interactively:
+  Number of tasks:    4
+  
+  Step :
+  Subtract the smallest number in each row from every number in the row.
+  Enter the results in a new table.
+  
+                         Task
+    Assignee| A      B      C      D      | Row Min
+  __________|_____________________________|________
+       1    | 5      4      6      7      | 4
+       2    | 6      6      7      5      | 5
+       3    | 7      5      7      6      | 5
+       4    | 5      4      6      6      | 4
+            |                             | 
+  
+  Step :
+  Subtract the smallest number in each column of the new table from every number in the column.
+  
+                         Task
+    Assignee| A      B      C      D      |
+  __________|_____________________________|________
+       1    | 1      0      2      3      | 
+       2    | 1      1      2      0      | 
+       3    | 2      0      2      1      | 
+       4    | 1      0      2      2      | 
+  Col Min   | 1      0      2      0      | 
+  
+  Step :
+  Enter the results in a new table.
+  
+  
+                         Task
+    Assignee| A      B      C      D      |
+  __________|_____________________________|________
+       1    | 0      0      0      3      | 
+       2    | 0      1      0      0      | 
+       3    | 1      0      0      1      | 
+       4    | 0      0      0      2      | 
+            |                             | 
+  
+  Step :
+  Determine the minimum number of lines needed to cross out all zeros.
+  
+                         Task
+    Assignee| A      B      C      D      |
+  __________|_____________________________|________
+            |                             |
+       1    |-0------0------0------3------|
+            |                             |
+       2    |-0------1------0------0------|
+            |                             |
+       3    |-1------0------0------1------|
+            |                             |
+       4    |-0------0------0------2------|
+            |                             |
+
+
+  
+  Make the assignments.
+  
+                         Task
+    Assignee| A      B      C      D      |
+  __________|_____________________________|________
+       1    | 0      0      0      3      | 
+       2    | 0      1      0      0      | 
+       3    | 1      0      0      1      | 
+       4    | 0      0      0      2      | 
+  
+  Task A is assigned to Assignee 1
+  Task D is assigned to Assignee 2
+  Task C is assigned to Assignee 3
+  Task B is assigned to Assignee 4
+  
